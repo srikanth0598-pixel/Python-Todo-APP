@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-5#p*#*ys*-kvfat=7q&568z*y(a7qu173b287p=ac)j_nm_2sh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*", "https://glasspane.pages.dev"]
+ALLOWED_HOSTS = ["*", "https://glasspane.pages.dev", "http://localhost:3000", "http://localhost:8000"]
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "sessionauth",
     "tasks",
     "rest_framework",
 ]
@@ -125,4 +126,22 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
+
 FRONTEND_AUTH_REDIRECT_URL = "http://localhost:3000/login-success"  # Replace with your frontend URL
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "srikanth0598@gmail.com"
+EMAIL_HOST_EMAIL = "srikanth0598@gmail.com"
+EMAIL_HOST_PASSWORD = "ikxpxoeaxndqnbhn"
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = "srikanth0598@gmail.com"

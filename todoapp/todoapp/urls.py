@@ -23,6 +23,7 @@ urlpatterns = [
     
     #path('api/', include('tasks.urls')),
     path('api/', include('api.url')),
+    path("apiv1/", include('sessionauth.urls')),
     path('auth/google/callback/', google_callback, name='google-callback'),
     
     path('admin/', admin.site.urls),

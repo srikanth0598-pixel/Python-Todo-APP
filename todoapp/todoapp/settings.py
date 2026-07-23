@@ -137,11 +137,3 @@ REST_FRAMEWORK = {
 }
 
 FRONTEND_AUTH_REDIRECT_URL = "http://localhost:3000/login-success"  # Replace with your frontend URL
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.gmail.com"
-EMAIL_PORT = 587
-EMAIL_HOST_USER = "srikanth0598@gmail.com"
-EMAIL_HOST_EMAIL = "srikanth0598@gmail.com"
-EMAIL_HOST_PASSWORD = "ikxpxoeaxndqnbhn"
-EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = "srikanth0598@gmail.com"
